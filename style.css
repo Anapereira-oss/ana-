@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #860ce94d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; /* Espaço para telas menores */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 8px;
+    flex-direction: row; /* Layout padrão */
+}
+
+.form-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #723ab3d7;
+    padding: 2rem;
+}
+
+.form-image img {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form {
+    width: 50%;
+    padding: 2rem;
+    background-color: #935bc04d;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-header h1 {
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    position: relative;
+    font-size: 2rem;
+}
+
+.form-header h1::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #723ab3;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.input-box {
+    flex: 1 1 48%; /* Campos lado a lado */
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.input-box input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.input-box input:focus {
+    background-color: #f2f2f2;
+    border-color: #723ab3;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    background-color: #723ab3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.buttons button:hover {
+    background-color: #5a2b8c;
+}
+
+.gender-title h6 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.gender-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; /* Ajusta os campos para telas menores */
+}
+
+.gender-input {
+    display: flex;
+    align-items: center;
+}
+
+.gender-input input {
+    margin-right: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center; /* Centraliza conteúdo */
+    }
+
+    .form-image {
+        width: 100%;
+    }
+
+    .form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .input-group {
+        gap: 0.5rem;
+    }
+
+    .input-box {
+        flex: 1 1 100%; /* Campos ocupam a largura total */
+    }
+
+    .form-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .buttons {
+        flex-direction: column; /* Botões empilhados */
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form {
+        padding: 1rem;
+    }
+
+    .form-header h1 {
+        font-size: 1.25rem;
+    }
+
+    .input-box label {
+        font-size: 12px;
+    }
+
+    .input-box input {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .buttons button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .gender-group {
+        flex-direction: column; /* Gêneros empilhados */
+    }
+}
